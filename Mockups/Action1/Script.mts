@@ -11,4 +11,28 @@ While Browser("CreationTime:=0").Exist(0)
 	Browser("CreationTime:=0").Close 
 Wend
 
+'Set the BrowserExecutable variable to be the .exe for the browser declared in the datasheet
+BrowserExecutable = DataTable.Value("BrowserName") & ".exe"
+
+'Launch the browser specified in the data table
+SystemUtil.Run BrowserExecutable,"","","",3												
+
+'Set the variable for what application (in this case the browser) we are acting upon
+Set AppContext=Browser("CreationTime:=0")												
+
+'Clear the browser cache to ensure you're getting the latest forms from the application
+AppContext.ClearCache																		
+
+'Navigate to the application URL
+AppContext.Navigate "about:blank"															
+
+'Maximize the application to give the best chance that the fields will be visible on the screen
+AppContext.Maximize																		
+
+'Wait for the browser to stop spinning
+AppContext.Sync																			
+
+'Tell the AI engine to point at the application
+AIUtil.SetContext AppContext																
+
 
