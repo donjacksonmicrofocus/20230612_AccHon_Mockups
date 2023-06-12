@@ -24,7 +24,7 @@ Set AppContext=Browser("CreationTime:=0")
 AppContext.ClearCache																		
 
 'Navigate to the application URL
-AppContext.Navigate "about:blank"															
+AppContext.Navigate DataTable.Value("URL")
 
 'Maximize the application to give the best chance that the fields will be visible on the screen
 AppContext.Maximize																		
