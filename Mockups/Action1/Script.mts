@@ -36,3 +36,10 @@ AppContext.Sync
 AIUtil.SetContext AppContext																
 
 
+AIUtil("text_box", micAnyText, micWithAnchorOnLeft, AIUtil.FindText("Credit Score")).SetText "820"
+AIUtil("button", "60", micWithAnchorOnLeft, AIUtil("button", "48")).Click
+AIUtil("text_box", micAnyText, micWithAnchorOnLeft, AIUtil("button", "60", micWithAnchorOnLeft, AIUtil("button", "48"))).Type ""
+
+AIUtil("down_triangle", micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("Expand All")).Click
+AIUtil("button", "Trade-In Add").Click
+FirstModel = AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Precision Certified ©")).GetText
