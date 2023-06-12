@@ -42,4 +42,4 @@ AIUtil("text_box", micAnyText, micWithAnchorOnLeft, AIUtil("button", "60", micWi
 
 AIUtil("down_triangle", micAnyText, micWithAnchorOnLeft, AIUtil.FindTextBlock("Expand All")).Click
 AIUtil("button", "Trade-In Add").Click
-FirstModel = AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindTextBlock("Precision Certified ©")).GetText
+FirstModel = AIUtil.FindTextBlock(micAnyText, micWithAnchorAbove, AIUtil.FindText("Precision Certified")).GetText
